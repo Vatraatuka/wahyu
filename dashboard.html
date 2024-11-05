@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Beranda - KULIAH PAKAR</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("WhatsApp Image 2024-11-01 at 01.42.38.jpeg"),
+          linear-gradient(to right, #004d7a, #b33030),
+          linear-gradient(135deg, #777777, #333333);
+        background-size: cover, cover, cover;
+        background-position: center, center, center;
+        background-blend-mode: overlay;
+        color: #fff;
+        height: 100%;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .w3-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        display: flex;
+        justify-content: space-around;
+        background-color: rgba(0, 77, 122, 0.8);
+      }
+
+      .w3-bar a {
+        padding: 14px 16px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        display: inline-block;
+      }
+
+      .w3-bar a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .w3-bar .icon {
+        display: none;
+        font-size: 26px;
+        color: white;
+        margin-top: 10px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .w3-bar .menu {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .w3-bar .menu a {
+          text-align: left;
+          padding: 12px;
+          font-size: 18px;
+        }
+
+        .w3-bar .icon {
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 20px;
+        }
+
+        .w3-bar.responsive .menu {
+          display: flex;
+        }
+
+        .w3-bar.responsive .icon {
+          background-color: transparent;
+        }
+      }
+
+      .container {
+        background: linear-gradient(to right, #b33030, #777777);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        max-width: 800px;
+        margin: 80px auto;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3em;
+        font-weight: 600;
+        color: transparent;
+        background: linear-gradient(to right, #4caf50, #b33030);
+        -webkit-background-clip: text;
+        background-clip: text;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        margin-bottom: 20px;
+        animation: textAnimation 2s ease-in-out infinite;
+      }
+
+      @keyframes textAnimation {
+        0% {
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+        50% {
+          text-shadow: 3px 3px 8px rgba(255, 255, 255, 0.6);
+        }
+        100% {
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      .button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1.2em;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .button:hover {
+        background-color: #45a049;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+        margin-top: 30px;
+      }
+
+      .professor-profiles {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+
+      .profile-card {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        width: 250px;
+        padding: 20px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .profile-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .profile-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .profile-card h3 {
+        font-size: 1.5em;
+        margin: 10px 0;
+        color: #333;
+      }
+
+      .profile-card p {
+        font-size: 1em;
+        color: #555;
+      }
+
+      .theme {
+        color: #4caf50;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .series-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #004d7a;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1.5em;
+        font-weight: bold;
+        border-radius: 15px;
+        animation: slideIn 1.5s ease-out;
+        margin-top: 20px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        height: 50px;
+      }
+
+      @keyframes slideIn {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .main-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w3-bar w3-top w3-theme-d4">
+      <div
+        class="w3-bar-item w3-button w3-padding-large w3-hover-white icon"
+        onclick="toggleMenu()"
+      >
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="w3-bar-item w3-button w3-padding-large w3-hover-white">
+        <a href="dashboard.html"
+          ><i class="fa fa-home w3-margin-right"></i> HOME</a
+        >
+      </div>
+      <div class="w3-bar-item w3-button w3-padding-large w3-hover-white">
+        <a href="Lokasi.html"><i class="fa fa-globe"></i> Lokasi</a>
+      </div>
+      <div class="w3-bar-item w3-button w3-padding-large w3-hover-white">
+        <a href="Profil.html"><i class="fa fa-user"></i> Profil</a>
+      </div>
+      <div class="w3-bar-item w3-button w3-padding-large w3-hover-white">
+        <a href="Pesan.html"><i class="fa fa-envelope"></i> Pesan</a>
+      </div>
+      <div class="w3-bar-item w3-button w3-padding-large w3-hover-white">
+        <a href="logout.html"><i class="fa fa-sign-out"></i> Logout</a>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        var nav = document.querySelector(".w3-bar");
+        nav.classList.toggle("responsive");
+      }
+    </script>
+
+    <main>
+      <div class="container">
+        <h1>Selamat Datang</h1>
+        <p>Silakan jelajahi menu di atas untuk informasi lebih lanjut.</p>
+        <img src="LAYER.png" alt="Foto Beranda" class="main-image" />
+        <button class="button">Pelajari Lebih Lanjut</button>
+      </div>
+
+      <div class="series-column">Series 1</div>
+      <div class="professor-profiles">
+        <div class="profile-card">
+          <img src="https://via.placeholder.com/250x250" alt="Pemateri 1" />
+          <h3>Dr. John Doe</h3>
+          <p>Ahli Kesehatan Masyarakat, Universitas XYZ</p>
+          <p class="theme">
+            Tema: "Membangun Kesehatan Masyarakat di Era Digital"
+          </p>
+        </div>
+        <div class="profile-card">
+          <img src="https://via.placeholder.com/250x250" alt="Pemateri 2" />
+          <h3>Prof. Jane Smith</h3>
+          <p>Eksper dari bidang Teknologi, Universitas ABC</p>
+          <p class="theme">
+            Tema: "Inovasi Teknologi dalam Pendidikan Masa Depan"
+          </p>
+        </div>
+      </div>
+
+      <div class="series-column">Series 2</div>
+      <div class="professor-profiles">
+        <div class="profile-card">
+          <img src="https://via.placeholder.com/250x250" alt="Pemateri 3" />
+          <h3>Dr. Alice Brown</h3>
+          <p>Spesialis dalam bidang Ekonomi, Universitas DEF</p>
+          <p class="theme">Tema: "Ekonomi Digital: Peluang dan Tantangan"</p>
+        </div>
+        <div class="profile-card">
+          <img src="https://via.placeholder.com/250x250" alt="Pemateri 4" />
+          <h3>Prof. Robert Green</h3>
+          <p>Ahli dalam bidang Lingkungan, Universitas GHI</p>
+          <p class="theme">
+            Tema: "Sustainable Development Goals di Indonesia"
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <a
+          href="pendaftaran.html"
+          class="w3-button w3-large w3-green w3-hover-opacity"
+          style="margin-top: 30px"
+          >Daftar Sekarang</a
+        >
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 LPPM STIK</p>
+    </footer>
+  </body>
+</html>
